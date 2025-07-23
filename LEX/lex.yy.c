@@ -1520,12 +1520,14 @@ int main()
 #line 17 "capitalize.l"
 
 
-int yywrap(void){}
+int yywrap(void)
+{
+    return 1;  // Return 1 to indicate end of input
+}
 
 int main()
 {
-// The function that starts the analysis    
-  yylex();
-
-  return 0;
+    // The function that starts the analysis    
+    yylex();
+    return 0;
 }

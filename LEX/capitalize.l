@@ -11,8 +11,8 @@
 /*yytext holds the text matched by the current token */
 %%
 [\t ]+ /* ignore whitespace */ ;
-[a-z] { printf("%c",yytext[0]-32); } /*converts to uppercase*/
-[A-Z] { printf("%c",yytext[0]+32); } /*cconverts to lowercase*/
+[a-z]    { printf("%c", yytext[0] - 32); }  /* lowercase to uppercase */
+[A-Z]    { printf("%c", yytext[0] + 32); }  /* uppercase to lowercase */
 .|\n { ECHO; /* normal default anyway */ }
 %%
 
