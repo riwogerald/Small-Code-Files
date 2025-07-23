@@ -12,16 +12,15 @@
 %%
 [\t ]+ /* ignore whitespace */ ;
 [a-z] { printf("%c",yytext[0]-32); } /*converts to uppercase*/
-[A-Z] { printf("%c",yytext[0]+32); } /*cconverts to lowercase*/
+[A-Z] { printf("%c",yytext[0]+32); } /*converts to lowercase*/
 .|\n { ECHO; /* normal default anyway */ }
 %%
 
-int yywrap(void){}
+int yywrap(void){ return 1; }
 
 int main()
 {
-// The function that starts the analysis    
-  yylex();
-
-  return 0;
+    // The function that starts the analysis    
+    yylex();
+    return 0;
 }
