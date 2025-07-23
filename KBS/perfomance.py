@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 class Performance:
-    def _init_(self):
+    def __init__(self):  # Fixed: __init__ not _init_
         self.score = 0
         self.score_history = []  # List to store score values
 
@@ -17,7 +17,7 @@ class Performance:
 
 
 class Environment:
-    def _init_(self):
+    def __init__(self):  # Fixed: __init__ not _init_
         self.location = ["A", "B"]  # locations
         self.locationcondition = {"A": 0, "B": 0}
         self.locationcondition["A"] = random.randint(0, 1)
@@ -29,11 +29,12 @@ class Environment:
         self.cleaningmethod["B"] = random.choice(self.mode)
 
 
-class Agent(Environment, Performance):
-    def _init_(self, environment, performance):
+class Agent:  # Fixed: Removed inheritance, made standalone class
+    def __init__(self, environment, performance):  # Fixed: __init__ not _init_
         print("Environment condition:", environment.locationcondition)
         print("Vacuum location:", environment.vacuumlocation)
         print("Cleaning method:", environment.cleaningmethod)
+        
         count = 0
         while count < 2:
             if environment.locationcondition[environment.vacuumlocation] == 1:
@@ -46,20 +47,24 @@ class Agent(Environment, Performance):
                 performance.score += 1
             else:
                 print(environment.vacuumlocation, "is clean")
+            
+            # Move to next location
             newindex = environment.location.index(environment.vacuumlocation) + 1
             if newindex == 2:
                 newindex = 0
             environment.vacuumlocation = environment.location[newindex]
             count += 1
+        
         print("New conditions:", environment.locationcondition)
-        print("Updated history:", environment.cleaningmethod)
-
-        performance.add_score(performance.score)  # Add score to performance history
+        print("Updated cleaning methods:", environment.cleaningmethod)
+        
+        performance.add_score(performance.score)  # Add current total score to history
 
 
 thescore = Performance()
 x = 0
 while x < 24:
+    print(f"\n--- Iteration {x + 1} ---")  # Added iteration counter for clarity
     e1 = Environment()
     a1 = Agent(e1, thescore)
     x += 1
@@ -71,9 +76,12 @@ thescore.display()
 iterations = list(range(1, 25))
 scores = thescore.score_history
 
-plt.plot(iterations, scores, marker='o')
+plt.figure(figsize=(10, 6))  # Added figure size for better visualization
+plt.plot(iterations, scores, marker='o', linewidth=2, markersize=6)
 plt.xlabel('Iterations')
-plt.ylabel('Score')
-plt.title('Agent Performance')
-plt.grid(True)
+plt.ylabel('Cumulative Score')
+plt.title('Agent Performance Over Time')
+plt.grid(True, alpha=0.3)
+plt.xticks(range(1, 25, 2))  # Show every other iteration on x-axis
+plt.tight_layout()
 plt.show()
