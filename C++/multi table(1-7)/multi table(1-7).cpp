@@ -2,6 +2,8 @@
 #include <vcclr.h>
 #include <msclr\marshal_cppstd.h>
 
+#pragma once
+
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;
