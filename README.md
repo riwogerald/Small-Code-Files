@@ -4,7 +4,7 @@ A comprehensive collection of programming examples, algorithms, utilities, and s
 
 ## 📋 Overview
 
-This repository contains practical implementations of algorithms, data structures, and small applications in **C**, **C++**, **Java**, and **Python**. Each language directory includes both fundamental programming concepts and more complex projects, making it suitable for learners at different levels.
+This repository contains practical implementations of algorithms, data structures, and small applications in **C**, **C++**, **Java**, **Python**, and **Rust**. Each language directory includes both fundamental programming concepts and more complex projects, making it suitable for learners at different levels.
 
 ## 🗂️ Repository Structure
 
@@ -14,6 +14,7 @@ Small-Code-Files/
 ├── C++/                  # C++ language implementations  
 ├── Java/                 # Java language implementations
 ├── Python/               # Python language implementations
+├── Rust/                 # Rust language implementations
 └── README.md            # This file
 ```
 
@@ -79,6 +80,22 @@ Pythonic implementations focusing on readability and efficiency:
 - **Employee Management**: Data structure demonstrations with employee records
 - **Enhanced Dice Roller**: Advanced probability simulation tool
 
+### 🟤 Rust Programming
+**Location**: `/Rust/`
+
+Memory-safe systems programming with modern language features:
+- **Core Algorithms**: Factorial (recursive & iterative), Fibonacci sequence generators, Prime number testing
+- **String Processing**: Advanced palindrome detection with multiple approaches
+- **Mathematical Tools**: GCD/LCM calculator with Extended Euclidean Algorithm
+- **Sorting Algorithms**: Multiple implementations (bubble, quick, merge, insertion) with performance benchmarking
+- **Memory Safety**: Zero-cost abstractions with compile-time guarantees
+
+**Featured Projects**:
+- **Advanced Sorting Suite**: Comprehensive comparison of sorting algorithms with performance metrics
+- **Prime Number Toolkit**: Sieve of Eratosthenes implementation with prime factorization
+- **String Analysis Tools**: Multi-approach palindrome detection with Unicode support
+- **Mathematical Calculator**: Extended GCD with Bézout coefficients and fraction simplification
+
 ## 🎯 Learning Objectives
 
 This repository is designed to help with:
@@ -98,6 +115,7 @@ This repository is designed to help with:
 - **C++**: Object-oriented programming, STL, graphics programming
 - **Java**: Enterprise patterns, collections framework, robust error handling
 - **Python**: Pythonic idioms, generators, rapid prototyping
+- **Rust**: Memory safety, ownership system, zero-cost abstractions, functional programming
 
 ### 🔧 Software Development Practices
 - Code organization and project structure
@@ -112,6 +130,7 @@ This repository is designed to help with:
 - **C++**: G++ compiler with C++11 support or later
 - **Java**: JDK 8 or later
 - **Python**: Python 3.6 or later
+- **Rust**: Rust toolchain (rustc + cargo) 1.70 or later
 
 ### Running the Programs
 
@@ -129,6 +148,11 @@ javac Program.java && java Program
 
 # Python programs
 python program.py
+
+# Rust programs
+rustc program.rs && ./program
+# or
+rust-script program.rs
 ```
 
 ## 📁 Directory Details
@@ -164,10 +188,10 @@ Perfect for:
 
 ## 📊 Project Statistics
 
-- **Languages**: 4 (C, C++, Java, Python)
-- **Projects**: 50+ individual programs and applications
+- **Languages**: 5 (C, C++, Java, Python, Rust)
+- **Projects**: 60+ individual programs and applications
 - **Complexity Range**: From basic algorithms to complete applications
-- **Focus Areas**: Algorithms, data structures, system design, user interfaces
+- **Focus Areas**: Algorithms, data structures, system design, user interfaces, memory safety
 
 ---
 
